@@ -1,2 +1,2 @@
-# qt-word
-Qt Word using COM Objects
+# Qt Word library
+MS Word control using COM objects
