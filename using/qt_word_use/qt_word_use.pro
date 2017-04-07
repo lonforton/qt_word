@@ -20,13 +20,10 @@ HEADERS += \
 CONFIG += c++11
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../build/release/ -lqt_word
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../build/debug/ -lqt_word
+win32: LIBS += -L$$PWD/../../bin/ -lqt_word
 
-INCLUDEPATH += $$PWD/../../build/debug
-DEPENDPATH += $$PWD/../../build/debug
+INCLUDEPATH += $$PWD/../../bin
+DEPENDPATH += $$PWD/../../bin
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../build/release/libqt_word.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../build/debug/libqt_word.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../build/release/qt_word.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../build/debug/qt_word.lib
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../bin/qt_word.lib
+else:win32-g++: PRE_TARGETDEPS += $$PWD/../../bin/libqt_word.a
