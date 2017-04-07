@@ -16,6 +16,8 @@ build*
 *.dll
 *.dylib
 
+!/bin/*
+
 # Qt-es
 
 /.qmake.cache
