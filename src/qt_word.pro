@@ -11,6 +11,8 @@ QT       += axcontainer
 TARGET = qt_word
 TEMPLATE = lib
 
+CONFIG += c++11
+
 DEFINES += QT_WORD_LIBRARY
 
 SOURCES += qword.cpp
